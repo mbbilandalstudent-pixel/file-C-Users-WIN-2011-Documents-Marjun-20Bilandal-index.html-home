@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentine's Day</title>
+
+<style>
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+    color: #333;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: #ff4d6d;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    margin: 5px 0;
+    text-shadow: 0 0 10px white,
+                 0 0 20px #ff1e56;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    margin: 0 15px;
+    padding: 8px 18px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.2);
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background: white;
+    color: #ff4d6d;
+}
+
+section {
+    min-height: 100vh;
+    padding: 120px 40px 60px 40px;
+    box-sizing: border-box;
+}
+
+.card {
+    max-width: 1000px;
+    margin: auto;
+    background: rgba(255,255,255,0.95);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(255, 0, 85, 0.3);
+}
+
+h2 {
+    text-align: center;
+    color: #cc0033;
+}
+
+.divider {
+    text-align:center;
+    color:#ff4d6d;
+    font-size:20px;
+    letter-spacing:5px;
+}
+
+.video-wrapper {
+    width: 100%;
+    max-width: 1000px;
+    margin: 30px auto;
+    aspect-ratio: 16 / 9;
+}
+
+.video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+audio {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.hearts {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #ff4d6d;
+    transform: rotate(45deg);
+    animation: float 12s infinite;
+    opacity: 0.6;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #ff4d6d;
+    border-radius: 50%;
+}
+
+.heart::before { top: -7px; left: 0; }
+.heart::after { left: -7px; top: 0; }
+
+@keyframes float {
+    0% { transform: translateY(100vh) rotate(45deg); opacity: 0; }
+    50% { opacity: 0.8; }
+    100% { transform: translateY(-10vh) rotate(45deg); opacity: 0; }
+}
+
+.heart:nth-child(1){ left:10%; }
+.heart:nth-child(2){ left:30%; }
+.heart:nth-child(3){ left:50%; }
+.heart:nth-child(4){ left:70%; }
+.heart:nth-child(5){ left:90%; }
+
+/* Glowing effect for header text */
+header h1 {
+    text-shadow: 0 0 10px white,
+                 0 0 20px #ff1e56,
+                 0 0 30px #ff4d6d,
+                 0 0 40px #ff4d6d,
+                 0 0 50px #ff4d6d;
+    animation: glowHeader 2s infinite alternate;
+}
+
+@keyframes glowHeader {
+    from { text-shadow: 0 0 10px white, 0 0 20px #ff1e56, 0 0 30px #ff4d6d; }
+    to { text-shadow: 0 0 20px white, 0 0 30px #ff1e56, 0 0 40px #ff4d6d; }
+}
+
+/* Glowing nav links */
+nav a {
+    box-shadow: 0 0 5px rgba(255,255,255,0.5);
+    transition: 0.3s, box-shadow 0.5s;
+}
+
+nav a:hover {
+    box-shadow: 0 0 20px #fff;
+}
+
+/* Glowing cards */
+.card {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15), 0 0 20px #ff4d6d66;
+    transition: 0.3s, box-shadow 0.5s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(255, 0, 85, 0.5), 0 0 25px #ff4d6d;
+}
+
+/* Glowing hearts animation enhancement */
+.heart {
+    box-shadow: 0 0 5px #ff4d6d, 0 0 10px #ff6699, 0 0 15px #ff99cc;
+    animation: float 12s infinite, pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+    0% { transform: rotate(45deg) scale(1); opacity: 0.6; }
+    50% { transform: rotate(45deg) scale(1.2); opacity: 0.9; }
+    100% { transform: rotate(45deg) scale(1); opacity: 0.6; }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>💖 Valentine’s Day 💖</h1>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#history">History</a>
+        <a href="#purpose">Why It Exists</a>
+        <a href="#modern">Modern Purpose</a>
+    </nav>
+</header>
+
+<div class="hearts">
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+</div>
+
+<section id="home">
+    <div class="card">
+        <h2>Introduction to Valentine’s Day</h2>
+        <p class="divider">♥ ♥ ♥ ♥ ♥</p>
+        <p>
+            Valentine’s Day is celebrated annually on February 14 
+            and is recognized around the world as a special day dedicated 
+            to expressing love, affection, and appreciation. Originally rooted 
+            in Christian tradition to honor Saint Valentine, the day has evolved
+             over centuries into a widely observed cultural holiday. Today, people
+              celebrate Valentine’s Day in many different ways, including giving greeting 
+              cards, chocolates, flowers, gifts, and spending quality time with loved ones.
+               While it is often associated with romantic relationships, the holiday also 
+               provides an opportunity to show care and gratitude to friends, family, and 
+               others who hold a special place in one’s life. Beyond personal gestures, Valentine’s
+                Day has also become a significant cultural and commercial event, influencing art,
+                 literature, advertisements, and social media around themes of love and connection.
+                  Its enduring popularity reflects humanity’s universal desire to celebrate emotional
+                   bonds and meaningful relationships.
+        </p>
+
+        <div class="video-wrapper">
+            <video autoplay loop muted playsinline controls>
+                <source src="c:\Users\WIN 11\Downloads\multo.mp4.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</section>
+
+<section id="history">
+    <div class="card">
+        <h2>History of Valentine’s Day</h2>
+        <p class="divider">♥ ♥ ♥ ♥ ♥</p>
+        <p>
+            The history of Valentine’s Day dates back to the Roman Empire, 
+            where it is believed to have originated as a religious feast honoring
+             Saint Valentine, a Christian priest or bishop. According to legend, 
+             during the reign of Emperor Claudius II, marriage was banned for young 
+             men, as the emperor believed single men made better soldiers. Saint 
+             Valentine defied this decree and secretly performed marriages for young 
+             couples, risking his life for love and commitment. For this, he was
+              arrested and eventually executed, becoming a martyr for love and faith.
+
+            Over time, his story inspired devotion, and the Church declared February 
+            14 as his feast day. By the Middle Ages, Valentine’s Day began to be associated
+             with romantic love, particularly in England and France, where people would exchange
+              handwritten notes and poems with their loved ones. This period saw the beginnings of
+               courtly love traditions, where romantic gestures were highly valued.
+
+            By the 18th century, the holiday became increasingly secular and widely celebrated
+            across Europe and later in America, with the popularization of Valentine’s cards, flowers,
+             and small gifts. The evolution from a religious feast to a celebration of romantic love reflects
+              both cultural and social changes over centuries. Today, Valentine’s Day combines its historical 
+              roots with modern expressions of love, making it a holiday celebrated by millions around the world 
+              in various forms.
+        </p>
+    </div>
+</section>
+
+<section id="purpose">
+    <div class="card">
+        <h2>Why Valentine’s Day Exists</h2>
+        <p class="divider">♥ ♥ ♥ ♥ ♥</p>
+        <p>
+            Valentine’s Day exists because of its combination of religious, cultural, and social
+             origins that have evolved over centuries. Originally, the holiday began as a Christian 
+             feast day honoring Saint Valentine, a priest or bishop in the Roman Empire who secretly
+              performed marriages for young couples despite imperial prohibitions. His courageous actions
+               and eventual martyrdom made him a symbol of love, compassion, and devotion.
+
+            Over time, the holiday transitioned from a strictly religious observance into a cultural 
+            celebration of romantic love. By the Middle Ages, Valentine’s Day was associated with courtly
+             love in countries like England and France, where it became customary to exchange handwritten n
+             otes, poems, and tokens of affection. Traditions such as giving flowers, chocolates, and greeting 
+             cards emerged as symbolic gestures to express love and admiration.
+
+            In modern society, Valentine’s Day continues to exist as a way to celebrate emotional bonds, appreciation, 
+            and connection between individuals, whether in romantic relationships, friendships, or family. While 
+            commercialization and marketing have influenced the way the holiday is celebrated, its core purpose remains 
+            the expression of love, care, and meaningful relationships. Ultimately, Valentine’s Day exists because it 
+            provides a dedicated moment for people to acknowledge and honor the importance of love in human life.
+        </p>
+
+        <audio controls>
+            <source src="c:\Users\WIN 11\Downloads\backgroundmusic.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+</section>
+
+<section id="modern">
+    <div class="card">
+        <h2>Modern Purpose of Valentine’s Day</h2>
+        <p class="divider">♥ ♥ ♥ ♥ ♥</p>
+        <p>
+            In today’s society, the modern purpose of Valentine’s Day has expanded beyond 
+            its historical and religious origins to encompass a broader celebration of love, 
+            affection, and human connection. While it remains strongly associated with romantic 
+            relationships, it is now also a day for expressing appreciation to friends, family members,
+             and even colleagues. People celebrate in a wide variety of ways, including romantic dinners,
+              gift-giving, exchanging flowers and chocolates, sending greeting cards, and sharing messages 
+              of love on social media platforms.
+
+            The holiday has also become a significant commercial event, with businesses promoting products 
+            and experiences that center on love and affection. Restaurants, florists, candy makers, and online
+            stores often see a surge in activity during this period, reflecting both cultural and economic dimensions 
+            of the celebration. Despite commercialization, the underlying purpose of Valentine’s Day remains the
+            acknowledgment of meaningful emotional bonds. It provides a designated time for individuals to consciously 
+            express gratitude, admiration, and care toward the people who enrich their lives.
+
+            Ultimately, the modern Valentine’s Day serves as a reminder of the importance of love and connection 
+            in human life, offering an opportunity to pause, celebrate relationships, and strengthen emotional ties in 
+            a fast-paced world.
+
+        </p>
+    </div>
+</section>
+
+</body>
+</html>
